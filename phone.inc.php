@@ -77,7 +77,7 @@ class pbxPhone {
       foreach($this as $sKey => $uValue ) {
         if(!$uValue) continue;
         $aKeys[] = $sKey;
-        $aValues[] = (is_numeric($uValue) ? $uValue : ( strlen($uValue) ? "'" .preg_replace("/\'/", "''", $uValue). "'" : "NULL"));
+        $aValues[] = (is_numeric($uValue) && substr($uValue,0, 1) != "0" ? $uValue : ( strlen($uValue) ? "'" .preg_replace("/\'/", "''", $uValue). "'" : "NULL"));
       }
       $sSql .= "(" . implode(", ", $aKeys) . ") \n";
       $sSql .= "VALUES (" . implode(", ", $aValues) . ") \n";
