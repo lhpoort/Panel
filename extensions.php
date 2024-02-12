@@ -26,13 +26,15 @@
 */
 
 //includes
+        require_once dirname(__DIR__, 2) . "/resources/require.php";
+        require_once "resources/require.php";
+        require_once "resources/paging.php";
+	require_once "config.inc.php";
 	require_once "root.php";
-	require_once "resources/require.php";
-
-  require_once "dbObject.inc.php"; 
-	require_once "extension.inc.php"; 
-	require_once "callFlow.inc.php"; 
-	require_once "voicemail.inc.php"; 
+        require_once "dbObject.inc.php";
+	require_once "extension.inc.php";
+	require_once "callFlow.inc.php";
+	require_once "voicemail.inc.php";
   
   $aResult = array("code" => 100, "message" => "Unknown.");
   try {
